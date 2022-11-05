@@ -238,7 +238,7 @@ public class cookieTest {
                     "Football"
             };
 
-            String goodAnswer = "“You are authorized”";
+            String goodAnswer = "You are authorized";
             Map<String, String> data = new HashMap<>();
             data.put("login", "super_admin");
 
@@ -247,9 +247,7 @@ public class cookieTest {
 
                 Response responseForGet = RestAssured
                         .given()
-                        .log().all()
                         .body(data)
-                        .log().all()
                         .when()
                         .post("https://playground.learnqa.ru/ajax/api/get_secret_password_homework")
                         .andReturn();
